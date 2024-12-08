@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "bilalmasjid-49299"
-  }
+    "default": "bilalmasjid-146db",
+    "production": "bilalmasjid-146db"
+  },
+  "targets": {},
+  "etags": {}
 }

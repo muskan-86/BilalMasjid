@@ -27,16 +27,26 @@ const DeniedEvents = () => {
         {deniedEvents.map((event) => (
           <li key={event.id} className="p-4 border-b border-gray-200">
              {event.reason && <p className="text-red-500">Reason: {event.reason}</p>}
-            <h3 className="text-lg font-semibold">{event.title}</h3>
-            <p>{event.description}</p>
-           
-
-            <p>{event.date}</p>
-            <p>{event.atartTime}&emsp;-&emsp; {event.endTime}</p>
-            <p>{event.contactName}</p>
-            <p>{event.contactEmail}</p>
-            <p>{event.contactPhone}</p>
-            <p>{event.poster}</p>
+             <h3 className="text-lg font-semibold">{event.title}</h3>
+              <p className="text-lg"><span className="text-lg font-semibold">Description:&emsp;</span>{event.description}</p>
+              <p className="text-lg"><span className="text-lg font-semibold">Date:&emsp;</span>{event.date}</p>
+              <p className="text-lg"><span className="text-lg font-semibold">  Time:&emsp;</span>{event.startTime}&emsp;-&emsp; {event.endTime}</p>
+              <p className="text-lg">
+                <span className="text-lg font-semibold">Contact Person Name: &emsp;</span>{event.contactName}
+              </p>
+              <p className="text-lg">
+                <span className="text-lg font-semibold">Contact Person Email:&emsp;</span>{event.contactEmail}
+              </p>
+              <p className="text-lg">
+                <span className="text-lg font-semibold">Contact Phone Number:&emsp;</span>{event.contactPhone}
+              </p>
+              <p>
+                {event.posterUrl ? (
+                  <img src={event.posterUrl} alt="Event Poster" className="w-full h-auto max-w-xs" onError={(e) => e.target.src = '/path/to/placeholder-image.jpg'} />
+                ) : (
+                  <span className="text-black">No poster</span>
+                )}
+              </p>
           </li>
         ))}
       </ul>

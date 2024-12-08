@@ -7,12 +7,13 @@ import { initializeFirestore, persistentLocalCache } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCW79mjwRTsS258P_tG4C6kKzZdylfYUps",
-  authDomain: "bilalmasjid-49299.firebaseapp.com",
-  projectId: "bilalmasjid-49299",
-  storageBucket: "bilalmasjid-49299.appspot.com",
-  messagingSenderId: "663574202197",
-  appId: "1:663574202197:web:ba590d467e29fa600ad1dc"
+  apiKey: "AIzaSyCS_X0giYYXV7i0zg4k2qsr4wp33YNkxic",
+  authDomain: "bilalmasjid-146db.firebaseapp.com",
+  projectId: "bilalmasjid-146db",
+  storageBucket: "bilalmasjid-146db.appspot.com",
+  messagingSenderId: "1018138418350",
+  appId: "1:1018138418350:web:05c84a99823d755527a13f",
+  // measurementId: "G-RKRBX1HYY4"
 };
 
 // Initialize Firebase
@@ -26,3 +27,5 @@ const storage = getStorage(app);
 
 
 export { app, auth, db,storage };
+
+
