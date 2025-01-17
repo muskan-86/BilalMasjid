@@ -16,3 +16,32 @@
 .prev-arrow {
   left: 10px; /* Adjust based on your design */
 }
+/* For large screens */
+.container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* For medium screens (e.g., tablets) */
+@media (max-width: 1024px) {
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 8px;
+  }
+}
+/* For small screens (e.g., mobile) */
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    padding: 0 5px;
+  }
+}

@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { db } from "../firebase-config"; // Import Firebase config
 import { collection, getDocs } from "firebase/firestore";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
-
+import "./Event.css";
 
 const SampleNextArrow = (props) => {
   const { className, style, onClick } = props;
@@ -90,10 +90,15 @@ const Event = () => {
   useEffect(() => {
     if (events.length) {
       const promises = events.map((event) => {
+        if (!event.posterUrl) {
+          // Resolve immediately if no posterUrl
+          return Promise.resolve();
+        }
         return new Promise((resolve) => {
           const img = new Image();
           img.src = event.posterUrl;
           img.onload = resolve;
+          img.onerror = resolve; // Ensure promise resolves even if image fails to load
         });
       });
 
@@ -117,13 +122,12 @@ const Event = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: isMobile ? 1 : 3,
+    slidesToShow: isMobile ? 1 : window.innerWidth <= 1024 ? 2 : 3, // Adjust based on screen width
     autoplay: !isMobile,
     slidesToScroll: 1,
     autoplaySpeed: 2000,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
-   
     afterChange: (current) => setCurrentSlide(current),
     customPaging: (i) => (
       <div
@@ -150,7 +154,10 @@ const Event = () => {
     <div
       style={{
         width: "80%",
-        maxWidth: isMobile ? "450px" : "1500px",
+        maxWidth: 
+          isMobile ? "450px" : 
+          window.innerWidth <= 768 ? "880px" : 
+          window.innerWidth <= 1024 ? "1000px" : "1500px", // Added breakpoints for 768 and 1024px
         margin: "0 auto",
       }}
     >
@@ -162,11 +169,38 @@ const Event = () => {
             onClick={() => handlePosterClick(event.id)}
           >
             <div className="relative flex flex-col items-center justify-center">
-              <img
-                className="h-72 rounded-2xl w-72 object-cover mb-4"
-                src={event.posterUrl}
-                alt={event.title}
-              />
+              {event.posterUrl ? (
+                <img
+                  className="h-72 rounded-2xl w-72 object-cover mb-4"
+                  src={event.posterUrl}
+                  alt={event.title}
+                />
+              ) : (
+                <div
+                  className="h-72 rounded-2xl w-72 flex flex-col gap-6 items-center justify-center mb-4"
+                  style={{
+                    backgroundColor: "#f3f4f6",
+                    color: "#6b7280",
+                    fontSize: "16px",
+                    fontWeight: "bold",
+                    textAlign: "center", // To center the text
+                  }}
+                >
+                  <p className="text-3xl">{event.title || "No Image Available"}</p>
+                  <p>
+                    <strong>Date:</strong>{" "}
+                    {event.date
+                      ? new Date(event.date.seconds * 1000).toLocaleDateString()
+                      : "N/A"}
+                  </p>
+                  <p>
+                    <strong>Start Time:</strong> {event.startTime || "N/A"}
+                  </p>
+                  <p>
+                    <strong>End Time:</strong> {event.endTime || "N/A"}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         ))}

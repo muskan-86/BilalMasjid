@@ -1,66 +1,97 @@
 import React from 'react';
-import "aos/dist/aos.css";
-import "./output.css";
+
+const services = [
+  {
+    title: 'Funeral',
+    description: (
+      <>
+        A funeral at Bilal Masjid involves Islamic rites, including ghusl,
+        Salat al-Janazah, and burial arrangements coordinated with nearby cemeteries like PDX Cemetery.
+      </>
+    ),
+    linkText: 'Funeral',
+    link: '/funeral',
+  },
+  {
+    title: 'Sunday School',
+    description: (
+      <>
+        Bilal Sunday School provides Islamic education and exciting activities such as a school-wide OMSI field trip,
+        along with improved facilities.
+      </>
+    ),
+    linkText: 'Sunday School',
+    link: 'https://www.bilalsundayschool.com/',
+  },
+  {
+    title: 'Social Services',
+    description: (
+      <>
+        Social services at Bilal Masjid provide essential support to individuals and families, including healthcare,
+        financial assistance, and community resources, to improve well-being and quality of life.
+      </>
+    ),
+
+    linkText: 'Social Services',
+    link: '/social',
+  },
+  {
+    title: 'Islamic Library',
+    description: (
+      <>
+        We have a wide range of religious books, and resources to enhance the spiritual and educational growth of the community.
+      </>
+    ),
+
+    linkText: 'Islamic Library',
+    link: 'https://pdxil.librarika.com/',
+  },
+  {
+    title: 'Cemetry',
+    description: (
+      <>
+        The Islamic Cemetery of Oregon, located in Corvallis, OR, provides a final resting place
+        for deceased individuals, adhering to all legal requirements for burial.
+      </>
+    ),
+    linkText: 'Cemetry',
+    link: '/cemetry',
+  },
+  {
+    title: 'Outreach',
+    description: (
+      <>
+        Bilal Masjid fosters interfaith dialogue, community service, and strong relationships with various
+        religious groups, local law enforcement, and Muslim organizations, while condemning terrorism.
+      </>),
+    linkText: 'Outreach',
+    link: '/outreach',
+  },
+];
 
 const Services = () => {
-
   return (
-    <div className="overflow-x-hidden">
-      {/* Services List */}
-      <div className="flex flex-row flex-wrap justify-around items-center" data-aos="slide-left">
-        {/* Service 1 */}
-        <div className="flex flex-col gap-12 justify-center items-center p-10">
-          <div className="min-h-40 flex flex-col min-w-40 bg-mediumseagreen-300 justify-center items-center rounded-full">
-            <img
-              className="w-20 h-20 text-center"
-              src="./public/graduation-cap@2x.png"
-              alt="Education Icon"
-            />
-          </div>
-          <div className="flex flex-col justify-center items-center">
-            <h3 className="font-bold text-2xl">Education</h3>
-            <p className="text-center mt-2 w-full max-w-xs">
-              We provide Islamic education to the community. We have a dedicated team of teachers who teach Quran,
-              Hadith, and other Islamic subjects.
-            </p>
-          </div>
-        </div>
+    <section className="px-[24px] xl:px-[135px] py-16 bg-gray-50 w-screen">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-semibold text-center mb-8">SERVICES</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
 
-        {/* Service 2 */}
-        <div className="flex flex-col gap-12 justify-center items-center p-10">
-          <div className="min-h-40 flex flex-col min-w-40 bg-mediumseagreen-300 justify-center items-center rounded-full">
-            <img
-              className="w-20 h-20 text-center"
-              src="./public/users@2x.png"
-              alt="Community Icon"
-            />
-          </div>
-          <div className="flex flex-col justify-center items-center">
-            <h3 className="font-bold text-2xl">Community</h3>
-            <p className="text-center mt-2 w-full max-w-xs">
-              We provide support and services to strengthen the community. Our activities include social events, support groups, and outreach.
-            </p>
-          </div>
-        </div>
-
-        {/* Service 3 */}
-        <div className="flex flex-col gap-12 justify-center items-center p-10">
-          <div className="min-h-40 flex flex-col min-w-40 bg-mediumseagreen-300 justify-center items-center rounded-full">
-            <img
-              className="w-20 h-20 text-center"
-              src="./public/today@2x.png"
-              alt="Religious Events Icon"
-            />
-          </div>
-          <div className="flex flex-col justify-center items-center">
-            <h3 className="font-bold text-2xl">Religious Events</h3>
-            <p className="text-center mt-2 w-full max-w-xs">
-              We organize various religious events, including prayers, lectures, and community gatherings to promote spiritual growth.
-            </p>
-          </div>
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="p-6 bg-white shadow-md rounded-lg hover:shadow-lg transition-shadow">
+              <h3 className="text-xl font-bold mb-2">
+                <a
+                  href={service.link}>
+                  {service.title}
+                </a>
+              </h3>
+              <p className="text-gray-700 mb-4">{service.description}</p>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

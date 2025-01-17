@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import { ClerkProvider } from '@clerk/clerk-react';
 import AboutUs from "./components/AboutUs";
+import Newsletter from "./components/Newsletter";
+import History from "./components/History";
 import EventsCalendar from "./components/EventsCalendar";
 import AdminPanel from "./components/AdminPanel";
 import Login from "./components/Login"; 
@@ -26,6 +28,10 @@ import Cemetry from "./components/Cemetry.jsx";
 import Funeral from "./components/Funeral.jsx";
 import Outreach from "./components/Outreach.jsx";
 import SocialServices from "./components/SocialServices.jsx";
+import Zakat from "./components/Zakat.jsx";
+import ZakatUlFitr from "./components/ZakatUlFitr.jsx";
+import Distribution from "./components/Distribution.jsx";
+import Whoshouldpayzakat from "./components/Whoshouldpayzakat.jsx";
 
 
 const clerkPublishableKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
@@ -39,6 +45,8 @@ function App() {
           <Route path="/" element={<Navigate to="/future" />} />   {/* Redirect from "/" to "/future" */}
             <Route path="/future" element={<HomePage />} />
             <Route path="/about" element={< AboutUs />} />
+            <Route path="/history" element={< History />} />
+            <Route path="/newsletter" element={< Newsletter />} />
             <Route path="/events" element={<EventsCalendar />} />
             <Route path="/login" element={<Login />} />
             <Route path="/request" element={<RequestedEvents />} />
@@ -58,8 +66,10 @@ function App() {
             <Route path="/social" element={<SocialServices/>} />
             <Route path="/outreach" element={<Outreach/>} />
             <Route path="/funeral" element={<Funeral/>} />
-
-          
+            <Route path="/zakat" element={<Zakat/>}/>
+            <Route path="/zakat/zakat-ul-fitr" element={<ZakatUlFitr/>}/>
+            <Route path="/zakat/distribution" element={<Distribution/>}/>
+            <Route path="/zakat/Whoshouldpayzakat"element={<Whoshouldpayzakat/>}/>
             <Route
             path="/admin-panel"
             element={

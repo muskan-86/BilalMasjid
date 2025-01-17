@@ -18,7 +18,7 @@ const AnnouncementButton = () => {
         <div>
             <button
                 onClick={handleOpenPopup}
-                className="fixed bottom-4 right-12 bg-white text-mediumseagreen-300 rounded-full z-50 border-2 border-green-600 h-8 w-36"
+                className="fixed bottom-4 right-12 bg-white text-mediumseagreen-300 rounded-full z-50 border-2 border-mediumseagreen-300 h-8 w-36"
             >
                 Announcement
             </button>
