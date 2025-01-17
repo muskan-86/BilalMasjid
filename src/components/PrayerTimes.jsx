@@ -55,7 +55,8 @@ const PrayerTimes = () => {
     console.log(todayData);
 
     return (
-        <div className="flex flex-col justify-center sm:flex-row w-full bg-white text-mediumseagreen-300 rounded-xl py-8 px-4 sm:px-16 overflow-x-hidden">
+        <div className="flex flex-col justify-center sm:flex-row w-full bg-white text-mediumseagreen-300 rounded-xl
+         py-8 px-4 sm:px-16 overflow-x-hidden">
             {/* Left side: Header */}
             <div className="flex flex-col sm:w-1/2 text-left mb-4 sm:mb-0 pl-4 sm:pl-12">
                 <h1 className="text-lg xl:text-xl md:text-sm font-bold text-mediumseagreen-300">
