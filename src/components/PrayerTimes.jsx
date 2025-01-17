@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
 import { getStorage, ref, listAll, getDownloadURL } from 'firebase/storage';
-import { db } from '../firebase-config';
-import KhateebSchedule from './KhateebSchedule';
 import {Link} from 'react-router-dom';
 
 const PrayerTimes = () => {
