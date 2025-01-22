@@ -6,7 +6,7 @@ import "./Navbar.css";
 import "./output.css"
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Herobanner = () => {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => {
@@ -28,7 +28,7 @@ const Navbar = () => {
   return (
     <div className=" navbar  relative z-100  ">
       <div className="flex flex-col justify-center items-center font-noto-sans text-black relative z-100">
-        <div className="flex justify-between items-center 4k:w-[1200px]  5k:w-[3500px] w-full px-4 py-3 bg-white">
+        <div className="flex justify-between items-center  w-full px-4 py-3 bg-white">
           <div>
             <Link to="/future">
               <img className="ml-4 h-16" loading="lazy" alt="Logo" src="/bilallogohighresolution-1@2x.png" />
@@ -207,5 +207,5 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Herobanner;
 

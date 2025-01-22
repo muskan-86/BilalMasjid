@@ -1,0 +1,6 @@
+@media (min-width: 2560px) {
+    .prayers {
+      max-width: 2700px; /* Adjust the width for larger screens */
+      margin: 0 auto;    /* Center the navbar horizontally */
+    }
+  }

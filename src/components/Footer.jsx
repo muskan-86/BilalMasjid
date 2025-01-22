@@ -3,13 +3,12 @@ import FollowButton from './FollowButton';
 import "./output.css";
 import { Link } from 'react-router-dom';
 
-
 const Footer = () => {
     return (
         <div className="overflow-x-hidden">
             {/* Footer */}
-            <div className="flex flex-col w-full bg-slate-100  p-10">
-                <div className="flex flex-row flex-wrap sm:flex-nowrap justify-around items-center gap-10 w-full bg-slate-100">
+            <div className="flex flex-col w-full bg-slate-100 p-10">
+                <div className="flex flex-row flex-wrap sm:flex-nowrap justify-around items-center gap-10 w-full bg-slate-100 max-w-[1300px] mx-auto">
                     <div className="flex flex-col items-start">
                         <img className="h-24 my-4" loading="lazy" alt="Logo" src="/bilallogohighresolution-1@2x.png" />
                         <div className="my-4 flex flex-col gap-2">
@@ -20,13 +19,13 @@ const Footer = () => {
                     <div className="flex flex-row gap-12 items-start">
                         <div className="flex flex-col gap-4 font-medium">
                             <p className="font-semibold">Quick Links</p>
-                            <p> <Link to="/about" className="no-underline text-black ">About Us</Link></p>
-                            <p><Link to="/events" className="no-underline text-black ">Calendar</Link></p>
-                            <p><Link to="/announcement" className="no-underline text-black ">Announcement </Link></p>
+                            <p> <Link to="/about" className="no-underline text-black">About Us</Link></p>
+                            <p><Link to="/events" className="no-underline text-black">Calendar</Link></p>
+                            <p><Link to="/announcement" className="no-underline text-black">Announcement</Link></p>
                             <Link to="/login" className="no-underline text-black hover:text-gray-700">Admin Panel</Link>
                         </div>
                         <div className="flex flex-col justify-center mx-4 items-center">
-                            <div >
+                            <div>
                                 <FollowButton />
                             </div>
                             <div className="flex gap-3">
@@ -55,4 +54,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

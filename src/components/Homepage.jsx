@@ -5,7 +5,7 @@ import Event from './Event.jsx';
 import IndexDonateBtn from './IndexDonateBtn.jsx';
 import IndexJoinUs from "./IndexJoinUsBtn.jsx";
 import Footer from "./Footer.jsx";
-import Navbar from "./Navbar.jsx";
+import Herobanner from "./Herobanner.jsx";
 import Loader from "./Loader.jsx";
 import WhatsAppButton from "./WhatsAppButton.jsx";
 import AnnouncementButton from './AnnouncementButton.jsx';
@@ -61,7 +61,7 @@ const HomePage = () => {
           <div
             className=" top-0 left-0 right-0 z-10 bg-transparent flex items-center justify-center p-4 lg:mx-20">
             <div className="w-full max-w-11/12">
-              <Navbar />
+              <Herobanner />
             </div>
           </div>
 
@@ -69,18 +69,19 @@ const HomePage = () => {
           <div className="mt-10 font-serif">
             {/* Large Screen */}
             <div className="bg-cover bg-center p-10 lg:flex lg:flex-row py-12 items-center hidden lg:block text-center">
-              <div className="relative z-20 w-full flex flex-col gap-4 justify-center items-center mt-6 p-2">
+              <div className="relative z-20 w-full flex flex-col gap-4 justify-center items-center mt-4 p-2">
                 <div className="my-4 px-4 w-full">
-                  <h2 className="text-white text-3xl font-bold xl:text-4xl" data-aos="fade-down">
+                  <h2 className="text-white text-5xl font-bold" data-aos="fade-down" style={{ fontWeight: 'bold' }} >
                     Welcome to Bilal Masjid
                   </h2>
                 </div>
                 <div className="flex w-full justify-center mt-3">
                   <div className="w-2/3 text-center" data-aos="slide-right">
-                    <p className="text-xl leading-relaxed text-white ">
+                    <p className="text-xl xl:text-2xl leading-relaxed text-white max-w-screen-lg mx-auto">
                       It is our honor and high privilege to welcome you to the Bilal Masjid Web site.
                       It is through the Gracious Mercy of Allah (SWT) that we are able to provide these services.
                     </p>
+
                   </div>
                 </div>
               </div>
@@ -90,11 +91,11 @@ const HomePage = () => {
             <div className="lg:hidden flex flex-col items-center bg-cover bg-center p-4 mb-2 font-serif text-center">
               <div className="relative z-20 flex flex-col justify-center max-w-full">
                 <div className="my-4 w-full">
-                  <h2 className="text-white text-xl text-center" data-aos="fade-down">
+                  <h2 className="text-white text-xl text-center" data-aos="fade-down"style={{ fontWeight: 'bold' }}>
                     Welcome to Bilal Masjid
                   </h2>
                 </div>
-                <div className="text-white text-justify" data-aos="slide-right">
+                <div className="text-white text-md text-justify" data-aos="slide-right">
                   It is our honor and high privilege to welcome you to the Bilal Masjid Web site.
                   It is through the Gracious Mercy of Allah (SWT) that we are able to provide these services.
                 </div>
@@ -147,7 +148,7 @@ const HomePage = () => {
                     {/* Service 3 */}
                     <div className="flex flex-col gap-12 justify-center items-center p-10">
                       <div className="min-h-40 bg-mediumseagreen-300 flex flex-col min-w-40 justify-center items-center rounded-full">
-                      <a href="https://us.mohid.co/or/portland/bma/masjid/online/donation" target="_blank" rel="noopener noreferrer">
+                        <a href="https://us.mohid.co/or/portland/bma/masjid/online/donation" target="_blank" rel="noopener noreferrer">
                           <img className="w-20 h-20 text-center" src="/icons8-donate-50.png" alt="Religious Events Icon" />
                         </a>
                       </div>
@@ -156,7 +157,7 @@ const HomePage = () => {
                           <h3 className="font-bold text-2xl">Support Your Mosque</h3>
                         </a>
                         <p className="text-center mt-2 w-full max-w-xs">
-                        Thanks to your generous donations, we are able to host worshippers, offer community services & distribute food to those that need it most.
+                          Thanks to your generous donations, we are able to host worshippers, offer community services & distribute food to those that need it most.
                         </p>
                       </div>
                     </div>
@@ -175,10 +176,11 @@ const HomePage = () => {
             style={{ backgroundImage: `url('/background.png')` }}
           >
             <div className="absolute inset-0 bg-white opacity-75"></div>
-            <div className="flex justify-center items-center max-w-full my-9 font-serif z-20">
+            <div className="flex justify-center items-center max-w-full my-9 z-20">
               <button
-                className="bg-white rounded-full border-4 border-green-600 px-6 py-2 text-green-600 font-medium text-2xl font-sans"
-                data-aos="fade-in" >
+                className="bg-white rounded-full border-4 border-green-600 px-6 py-2 text-green-600 font-medium text-2xl font-jenson"
+                data-aos="fade-in"
+                style={{ fontWeight: 'bold' }} >
                 Upcoming Events
               </button>
             </div>
@@ -186,26 +188,27 @@ const HomePage = () => {
           <div className="mt-4">
             <Event />
           </div>
-          
+
           {/* Services Part */}
           <div></div>
           <div className="flex flex-col justify-around items-center mt-8">
             <div
-              className="relative w-full h-60 flex justify-center mx-72 px-96"
+              className="relative w-screen h-60 flex justify-center mx-72 px-96"
               style={{ backgroundImage: `url('/background.png')` }}
             >
               <div className="absolute inset-0 bg-white opacity-75"></div>
-              <div className="flex justify-center items-center max-w-full my-12 font-serif z-20">
+              <div className="flex justify-center items-center max-w-full my-12 z-20">
                 <button
-                  className="bg-white rounded-full border-4 border-green-600 px-8 py-2 text-green-600 font-medium text-2xl font-sans"
-                  data-aos="fade-in" >
+                  className="bg-white rounded-full border-4 border-green-600 px-8 py-2 text-green-600 font-medium text-2xl font-jenson"
+                  data-aos="fade-in"
+                  style={{ fontWeight: 'bold' }}>
                   Our Services
                 </button>
               </div>
             </div>
           </div>
-          <div>
-            <Services/>
+          <div className='bg-gray-50'>
+            <Services />
           </div>
 
           {/* Newsletter */}

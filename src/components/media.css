@@ -1,0 +1,6 @@
+/* Custom max-widths for large screens */
+@media (min-width: 4000px) {
+    .max-w-4000 {
+      max-width: 1600px;
+    }
+  }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
 import { getStorage, ref, listAll, getDownloadURL } from 'firebase/storage';
 import {Link} from 'react-router-dom';
+import "./prayers.css";
 
 const PrayerTimes = () => {
     const [todayData, setTodayData] = useState({});
@@ -55,7 +56,7 @@ const PrayerTimes = () => {
     console.log(todayData);
 
     return (
-        <div className="flex flex-col justify-center sm:flex-row w-full bg-white text-mediumseagreen-300 rounded-xl
+        <div className=" prayers flex flex-col justify-center sm:flex-row w-full bg-white text-mediumseagreen-300 rounded-xl
          py-8 px-4 sm:px-16 overflow-x-hidden">
             {/* Left side: Header */}
             <div className="flex flex-col sm:w-1/2 text-left mb-4 sm:mb-0 pl-4 sm:pl-12">

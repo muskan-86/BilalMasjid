@@ -44,6 +44,7 @@ function App() {
           <Routes>
           <Route path="/" element={<Navigate to="/future" />} />   {/* Redirect from "/" to "/future" */}
             <Route path="/future" element={<HomePage />} />
+            
             <Route path="/about" element={< AboutUs />} />
             <Route path="/history" element={< History />} />
             <Route path="/newsletter" element={< Newsletter />} />
