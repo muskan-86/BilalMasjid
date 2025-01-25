@@ -71,13 +71,13 @@ const HomePage = () => {
             <div className="bg-cover bg-center p-10 lg:flex lg:flex-row py-12 items-center hidden lg:block text-center">
               <div className="relative z-20 w-full flex flex-col gap-4 justify-center items-center mt-4 p-2">
                 <div className="my-4 px-4 w-full">
-                  <h2 className="text-white text-5xl font-bold" data-aos="fade-down" style={{ fontWeight: 'bold' }} >
+                  <h2 className="text-white text-4xl font-bold" data-aos="fade-down" style={{ fontWeight: 'bold' }} >
                     Welcome to Bilal Masjid
                   </h2>
                 </div>
                 <div className="flex w-full justify-center mt-3">
                   <div className="w-2/3 text-center" data-aos="slide-right">
-                    <p className="text-xl xl:text-2xl leading-relaxed text-white max-w-screen-lg mx-auto">
+                    <p className="text-lg xl:text-xl leading-relaxed text-white max-w-screen-lg mx-auto">
                       It is our honor and high privilege to welcome you to the Bilal Masjid Web site.
                       It is through the Gracious Mercy of Allah (SWT) that we are able to provide these services.
                     </p>

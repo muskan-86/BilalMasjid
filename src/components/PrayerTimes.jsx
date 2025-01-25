@@ -72,7 +72,7 @@ const PrayerTimes = () => {
                     <KhateebSchedule/>
                 </p> */}
                 <p className="text-mediumseagreen-300 text-sm sm:text-sm">
-                    <Link to="/khateeb-schedule">Jummah Time: {todayData.Jummah1 || '1:30'} & {todayData.Jummah2 || '2:00'}</Link>
+                    <Link to="/khateeb-schedule">Jummah Time: {todayData.Jummah1 || '12:30'} & {todayData.Jummah2 || '1:45'}</Link>
                 </p>
             </div>
 
@@ -82,11 +82,11 @@ const PrayerTimes = () => {
                     <table className="w-full min-w-max">
                         <thead>
                             <tr className="text-xs md:text-sm sm:text-sm">
-                                <th className="px-4 py-1 text-mediumseagreen-300">Fajr</th>
-                                <th className="px-3 py-1 text-mediumseagreen-300">Duhr</th>
+                                <th className="px-6 py-1 text-mediumseagreen-300">Fajr</th>
+                                <th className="px-5 py-1 text-mediumseagreen-300">Duhr</th>
                                 <th className="px-6 py-1 text-mediumseagreen-300">Asr</th>
-                                <th className="px-1 py-1 text-mediumseagreen-300">Maghrib</th>
-                                <th className="px-4 py-1 text-mediumseagreen-300">Isha</th>
+                                <th className="px-3 py-1 text-mediumseagreen-300">Maghrib</th>
+                                <th className="px-5 py-1 text-mediumseagreen-300">Isha</th>
                             </tr>
                         </thead>
                         <tbody className="text-black">
