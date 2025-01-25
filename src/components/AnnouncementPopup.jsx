@@ -56,7 +56,7 @@ const AnnouncementPopup = ({ isOpen, onClose }) => {
 
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-    <div className="bg-white p-4 rounded-lg shadow-md w-11/12 max-w-sm mx-4 relative">
+    <div className="bg-white p-6 rounded-lg shadow-md w-11/12 max-w-sm mx-4 relative">
         {/* Close Button */}
         <button
             onClick={onClose}
@@ -70,7 +70,7 @@ const AnnouncementPopup = ({ isOpen, onClose }) => {
         <Slider {...settings}>
             {announcements.length > 0 ? (
                 announcements.map((announcement) => (
-                    <div key={announcement.id} className="w-70 rounded-lg">
+                    <div key={announcement.id} className="w-70 rounded-lg mb-2">
                         <div className="relative flex flex-col items-center justify-center">
                             <img
                                 src={announcement.imageUrl}

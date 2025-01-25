@@ -165,7 +165,7 @@ const Event = () => {
         {events.map((event) => (
           <div
             key={event.id}
-            className="card w-70 rounded-lg"
+            className="card w-70 rounded-lg mb-4"
             onClick={() => handlePosterClick(event.id)}
           >
             <div className="relative flex flex-col items-center justify-center">
