@@ -78,38 +78,53 @@ const PrayerTimes = () => {
 
             {/* Right side: Prayer Times */}
             <div className="flex flex-col sm:text-right mt-4 sm:mt-0">
-                <div className="overflow-x-auto">
-                    <table className="w-full min-w-max">
-                        <thead>
-                            <tr className="text-xs md:text-sm sm:text-sm">
-                                <th className="px-6 py-1 text-mediumseagreen-300">Fajr</th>
-                                <th className="px-5 py-1 text-mediumseagreen-300">Duhr</th>
-                                <th className="px-6 py-1 text-mediumseagreen-300">Asr</th>
-                                <th className="px-3 py-1 text-mediumseagreen-300">Maghrib</th>
-                                <th className="px-5 py-1 text-mediumseagreen-300">Isha</th>
-                            </tr>
-                        </thead>
-                        <tbody className="text-black">
-                            {/* Adhan Times */}
-                            <tr className="text-xs md:text-sm sm:text-sm">
-                                <td className="px-3 py-1">{todayData.Fajr}</td>
-                                <td className="px-3 py-1">{todayData.Duhr}</td>
-                                <td className="px-3 py-1">{todayData.Asr}</td>
-                                <td className="px-4 py-1">{todayData.Maghrib}</td>
-                                <td className="px-3 py-1">{todayData.Isha}</td>
-                            </tr>
-                            {/* Iqama Times */}
-                            <tr className="text-xs md:text-sm sm:text-sm">
-                                <td className="px-3 py-2">{todayData['Fajr Iqama']}</td>
-                                <td className="px-3 py-2">{todayData['Duhr Iqama']}</td>
-                                <td className="px-3 py-2">{todayData['Asr Iqama']}</td>
-                                <td className="px-4 py-2">{todayData['Maghrib Iqama']}</td>
-                                <td className="px-3 py-2">{todayData['Isha Iqama']}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+    <div className="overflow-x-auto">
+        <table className="w-full min-w-max">
+            {/* Table Head */}
+            <thead>
+                <tr className="bg-mediumseagreen-200">
+                    <th className="px-1 sm:px-3 md:px-6 py-1 sm:py-2 text-mediumseagreen-700 text-center text-[10px] sm:text-xs md:text-sm">
+                        Fajr
+                    </th>
+                    <th className="px-1 sm:px-3 md:px-5 py-1 sm:py-2 text-mediumseagreen-700 text-center text-[10px] sm:text-xs md:text-sm">
+                        Duhr
+                    </th>
+                    <th className="px-1 sm:px-3 md:px-6 py-1 sm:py-2 text-mediumseagreen-700 text-center text-[10px] sm:text-xs md:text-sm">
+                        Asr
+                    </th>
+                    <th className="px-1 sm:px-2 md:px-3 py-1 sm:py-2 text-mediumseagreen-700 text-center text-[10px] sm:text-xs md:text-sm">
+                        Maghrib
+                    </th>
+                    <th className="px-1 sm:px-3 md:px-5 py-1 sm:py-2 text-mediumseagreen-700 text-center text-[10px] sm:text-xs md:text-sm">
+                        Isha
+                    </th>
+                </tr>
+            </thead>
+            {/* Table Body */}
+            <tbody className="text-black text-center">
+                {/* Adhan Times */}
+                <tr className="bg-white">
+                    <td className="px-1 sm:px-3 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData.Fajr}</td>
+                    <td className="px-1 sm:px-3 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData.Duhr}</td>
+                    <td className="px-1 sm:px-3 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData.Asr}</td>
+                    <td className="px-1 sm:px-4 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData.Maghrib}</td>
+                    <td className="px-1 sm:px-3 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData.Isha}</td>
+                </tr>
+                {/* Iqama Times */}
+                <tr className="bg-white">
+                    <td className="px-1 sm:px-3 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData['Fajr Iqama']}</td>
+                    <td className="px-1 sm:px-3 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData['Duhr Iqama']}</td>
+                    <td className="px-1 sm:px-3 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData['Asr Iqama']}</td>
+                    <td className="px-1 sm:px-4 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData['Maghrib Iqama']}</td>
+                    <td className="px-1 sm:px-3 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData['Isha Iqama']}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
         </div>
     );
 };
