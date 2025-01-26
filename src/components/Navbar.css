@@ -5,12 +5,27 @@
     background: #009a53;
     /* box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25); */
   }
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     #menu , #location{
       display:none;
     }
-   
   }
+  @media (min-width: 701px) and (max-width: 768px) {
+    #menu, #location {
+      display: none;
+    }
+  
+    .menu-btn {
+      display: block;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    #menu, #location {
+      display: flex; /* or flex depending on your layout */
+    }
+  }
+
   .navbar {
     position: relative; /* or use fixed if it's supposed to stay on top during scroll */
     z-index: 100;
@@ -19,8 +34,6 @@
     z-index: 9999;
     position: absolute;
   }
-  /* Apply to the navbar container */
-
 
 /* For larger screens (above 2560px) */
 @media (min-width: 2560px) {

@@ -14,8 +14,6 @@ import EventForm from "./EventForm";
 import WhatsAppButton from "./WhatsAppButton.jsx";
 import AnnouncementButton from './AnnouncementButton.jsx';
 
-
-
 const formatDateToMMDDYYYY = (dateString) => {
   const date = new Date(dateString);
   if (isNaN(date.getTime())) return "Invalid Date";
@@ -31,35 +29,31 @@ const EventsCalendar = () => {
   const [firestoreEvents, setFirestoreEvents] = useState([]);
   const [showForm, setShowForm] = useState(false);
   const calendarRef = useRef(null);
-  const [loading, setLoading] = useState(true); // State to track loader status
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-
   useEffect(() => {
-    
     const timer = setTimeout(() => {
-      setLoading(false); // Set loading to false once done
+      setLoading(false);
     }, 500);
-    // Cleanup timer
     return () => clearTimeout(timer);
   }, []);
 
-useEffect(() => {
-  const unsubscribe = onSnapshot(collection(db, "approved_events"), (snapshot) => {
-    const fetchedEvents = snapshot.docs.map((doc) => ({
-      id: doc.id, // Ensure each event has an ID
-      title: doc.data().title,
-      start: doc.data().date,
-      color: "#009a53", 
-    }));
-    setFirestoreEvents(fetchedEvents);
-  });
+  useEffect(() => {
+    const unsubscribe = onSnapshot(collection(db, "approved_events"), (snapshot) => {
+      const fetchedEvents = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        title: doc.data().title,
+        start: doc.data().date,
+        color: "#009a53",
+      }));
+      setFirestoreEvents(fetchedEvents);
+    });
 
-  return () => unsubscribe();
-}, []);
+    return () => unsubscribe();
+  }, []);
 
-// Combine Firestore and manually added events
-const allEvents = [...events, ...firestoreEvents]; 
+  const allEvents = [...events, ...firestoreEvents];
 
   const handleDateClick = (info) => {
     console.log("Clicked on date: ", info.dateStr);
@@ -79,43 +73,37 @@ const allEvents = [...events, ...firestoreEvents];
   const handleToggleForm = () => {
     setShowForm(!showForm);
   };
-  
 
   const handleEventClick = (eventId) => {
-    // Navigate to event details page with the event ID
     navigate(`/event-details/${eventId}`);
   };
-  
-  
-  
+
   return (
     <div className="overflow-x-hidden">
       <div>
-      {loading && <Loader />} {/* Show loader if loading is true */}
-        <div  className="relative z-50"data-aos="fade-down">
+        {loading && <Loader />}
+        <div className="relative z-50" data-aos="fade-down">
           <Navbar />
         </div>
         <div className="relative gap-2">
-        {/* Other components */}
-        {!loading && <AnnouncementButton/>}
-        {!loading && < WhatsAppButton/>}
+          {!loading && <AnnouncementButton />}
+          {!loading && <WhatsAppButton />}
+        </div>
 
-      </div>
-      
-        {/* Calendar */}
-        <div className="mb-2 relative max-w-full h-40 flex justify-center bg-cover-img"
-          style={{ backgroundImage: "url('/background.png')" }}>
+        <div
+          className="mb-2 relative max-w-full h-40 flex justify-center bg-cover-img"
+          style={{ backgroundImage: "url('/background.png')" }}
+        >
           <div className="absolute inset-0 bg-white opacity-70 z-10"></div>
           <div className="flex flex-col justify-center items-center max-w-full pb-0 font-serif relative z-20">
-            <button
-              className="bg-white rounded-full border-4 border-mediumseagreen-300 px-8 py-2 text-mediumseagreen-300 font-bold text-3xl mb-6 font-sans z-20">
+            <button className="bg-white rounded-full border-4 border-mediumseagreen-300 px-8 py-2 text-mediumseagreen-300 font-bold text-3xl mb-6 font-sans z-20">
               Events Calendar
             </button>
           </div>
         </div>
-        {/* Request Event Button */}
+
         <div className="p-4">
-          <div className="flex flex-col justify-center items-center  ">
+          <div className="flex flex-col justify-center items-center">
             <button
               id="request-event-btn"
               className="bg-mediumseagreen-300 text-white px-4 py-2 rounded mx-2 mb-2"
@@ -123,13 +111,10 @@ const allEvents = [...events, ...firestoreEvents];
             >
               Request
             </button>
-            <p className=" mb-4">Request to use Bilal Masjid Facilities for an Event</p>
-            
+            <p className="mb-4">Request to use Bilal Masjid Facilities for an Event</p>
           </div>
         </div>
-       
 
-        {/* Event Form */}
         {showForm && (
           <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
             <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-md relative">
@@ -137,8 +122,19 @@ const allEvents = [...events, ...firestoreEvents];
                 className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
                 onClick={handleToggleForm}
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
                 </svg>
               </button>
               <EventForm onSubmit={handleEventRequestSubmit} onClose={handleToggleForm} />
@@ -146,35 +142,59 @@ const allEvents = [...events, ...firestoreEvents];
           </div>
         )}
 
-        {/* Calendar and Event List */}
-        <div id="calendar-and-list" className="flex justify-center lg:flex-row md:flex-row gap-4 md:gap-8 m-10">
-  {/* Calendar Container */}
-  <div className="w-full max-h-screen md:w-2/4 lg:w-2/3 xl:w-1/2 overflow-y-auto">
+<div
+  id="calendar-and-list"
+  className="grid grid-cols-1 xl:grid-cols-2 gap-8 m-4 lg:mx-10"
+>
+  {/* Calendar Section */}
+  <div
+    className={`w-full max-h-screen overflow-y-auto ${
+      window.innerWidth >= 1080 ? "xl:col-span-1" : "xl:col-span-2"
+    }`}
+  >
     <FullCalendar
       ref={calendarRef}
       plugins={[dayGridPlugin, timeGridPlugin]}
       initialView="dayGridMonth"
-      initialDate="2024-10-01"
       headerToolbar={{
         left: "prev,next today",
         center: "title",
         right: "dayGridMonth,timeGridWeek,timeGridDay",
       }}
-      events={allEvents.map(event => ({ ...event, id: event.id }))} // Ensure events have an ID
+      buttonText={{
+        today: "Today",
+        month: "Month",
+        week: "Week",
+        day: "Day",
+      }}
+      contentHeight="auto"
+      events={allEvents.map((event) => ({ ...event, id: event.id }))}
       dateClick={handleDateClick}
-      eventClick={(info) => handleEventClick(info.event.id)} // Handle event click
+      eventClick={(info) => handleEventClick(info.event.id)}
     />
   </div>
 
-  {/* Event List Container */}
-  <div className="w-full md:w-1/3 lg:w-1/3 xl:w-2/4 bg-slate-200 p-4 rounded">
+  {/* Event List Section */}
+  <div
+    className={`w-full bg-slate-200 p-4 rounded ${
+      window.innerWidth >= 1080 ? "xl:col-span-1" : "xl:col-span-2"
+    }`}
+  >
     {allEvents.length > 0 && (
       <div>
         <h2 className="text-xl font-semibold mb-2 pl-5">Event List</h2>
         <ul id="event-items" className="list-disc pl-5">
           {allEvents.map((event) => (
-            <li key={event.id} className="flex items-center mb-2" onClick={() => handleEventClick(event.id)}>
-              <span className="flex-grow">{`${event.title} - ${event.start ? formatDateToMMDDYYYY(event.start) : "Invalid Date"}`}</span>
+            <li
+              key={event.id}
+              className="flex items-center mb-2 cursor-pointer"
+              onClick={() => handleEventClick(event.id)}
+            >
+              <span className="flex-grow">
+                {`${event.title} - ${
+                  event.start ? formatDateToMMDDYYYY(event.start) : "Invalid Date"
+                }`}
+              </span>
             </li>
           ))}
         </ul>
@@ -182,7 +202,10 @@ const allEvents = [...events, ...firestoreEvents];
     )}
   </div>
 </div>
-        {/* Footer */}
+
+
+
+
         <Footer />
       </div>
     </div>

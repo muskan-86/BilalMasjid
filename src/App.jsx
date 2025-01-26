@@ -32,6 +32,7 @@ import Zakat from "./components/Zakat.jsx";
 import ZakatUlFitr from "./components/ZakatUlFitr.jsx";
 import Distribution from "./components/Distribution.jsx";
 import Whoshouldpayzakat from "./components/Whoshouldpayzakat.jsx";
+import PrayerTimeView from "./components/PrayerTimeView.jsx";
 
 
 const clerkPublishableKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
@@ -44,7 +45,7 @@ function App() {
           <Routes>
           <Route path="/" element={<Navigate to="/future" />} />   {/* Redirect from "/" to "/future" */}
             <Route path="/future" element={<HomePage />} />
-            
+            <Route path="/prayer-view" element={<PrayerTimeView />} />
             <Route path="/about" element={< AboutUs />} />
             <Route path="/history" element={< History />} />
             <Route path="/newsletter" element={< Newsletter />} />

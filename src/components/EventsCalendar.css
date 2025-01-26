@@ -86,7 +86,7 @@
   
   /* Ensure the navbar items stack vertically on small screens */
   
-  @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
     .navbar-content {
         flex-direction: column;
         align-items: center;
@@ -107,25 +107,7 @@
         width: 100%;
         box-shadow: none;
     }
-  }
-  
-  /* Responsive Admin Login Form */
-  @media (max-width: 7680px) {
-   
-    #admin-login {
-      width: 100%;
-      padding: 16px;
-  }
-   
-  }
-  @media (max-width: 600px) {
-    #menu , #location{
-      display:none;
-    }
-    
-   
-  }
-  
+  } */
   /* Responsive Calendar and Event List */
   @media (max-width: 900px) {
     #calendar-and-list {

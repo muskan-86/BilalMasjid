@@ -43,49 +43,134 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu */}
-          <nav id="menu" className="sm:hidden md:flex lg:flex justify-center xl:gap-10 lg:gap-4 md:gap-2 items-center relative z-100">
-          <div className="relative group z-50">
-              <a href="#" className="no-underline text-black hover:text-gray-700 text-xs lg:text-md xl:text-lg">About Us</a>
-              <div className="absolute  dropdown mt-2 w-36 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200  left-1/2 transform -translate-x-1/2 z-50">
-                <Link to="/about" className="block px-4 py-2 text-gray-800 hover:bg-green-200">About Us</Link>
-                <Link to="/history" className="block px-4 py-2 text-gray-800 hover:bg-green-200">History</Link>
-                <Link to="/newsletter" className="block px-4 py-2 text-gray-800 hover:bg-green-200">Newsletter</Link>
-              </div>
-            </div>
-            {/* <Link to="/about" className="no-underline text-black hover:text-gray-700 text-xs lg:text-md xl:text-lg">About Us</Link> */}
-            {/* <Link to="/under-construction" className="no-underline text-black hover:text-gray-700">Services</Link> */}
-            <div className="relative group z-50">
-              <a href="#" className="no-underline text-black hover:text-gray-700 text-xs lg:text-md xl:text-lg">Services</a>
-              <div className="absolute  dropdown mt-2 w-36 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200  left-1/2 transform -translate-x-1/2 z-50">
-                <Link to="/funeral" className="block px-4 py-2 text-gray-800 hover:bg-green-200">Funeral</Link>
-                <a href="https://www.bilalsundayschool.com/"
-                  className="block px-4 py-2 text-gray-800 hover:bg-green-200">Sunday School</a>
-                <Link to="/social" className="block px-4 py-2 text-gray-800 hover:bg-green-200">Social Services</Link>
-                <a href="https://pdxil.librarika.com/" className="block px-4 py-2 text-gray-800 hover:bg-green-200">
-                  Islamic Library</a>
-                <Link to="/cemetry" className="block px-4 py-2 text-gray-800 hover:bg-green-200">Cemetry</Link>
-                <Link to="/outreach" className="block px-4 py-2 text-gray-800 hover:bg-green-200">Outreach</Link>
-              </div>
-            </div>
-            <Link to="/events" className="no-underline text-black hover:text-gray-700 text-xs lg:text-md xl:text-lg">Calendar</Link>
-
-            {/* Donations Dropdown */}
-            <div className="relative group z-50">
-              <a href="#" className="no-underline text-black hover:text-gray-700 text-xs lg:text-md xl:text-lg">Donations</a>
-              <div className="absolute  dropdown mt-2 w-36 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200  left-1/2 transform -translate-x-1/2 z-50">
-                <a href="https://us.mohid.co/or/portland/bma/masjid/online/donation"
-                  className="block px-4 py-2 text-gray-800 hover:bg-green-200">Donate via Card/Paypal</a>
-                <a href="https://us.mohid.co/or/portland/bma/masjid/online/donation"
-                  className="block px-4 py-2 text-gray-800 hover:bg-green-200">Donate Stock</a>
-                <Link to="/zakat" className="block px-4 py-2 text-gray-800 hover:bg-green-200">Zakat</Link>  
-              </div>
-            </div>
-
-            {/* Location Dropdown */}
-
-
-            <Link to="/announcement" className="no-underline text-black hover:text-gray-700 text-xs lg:text-md xl:text-lg">Announcement</Link>
-          </nav>
+          <nav
+           id="menu"
+           className="flex justify-center xl:gap-10 md:gap-2 lg:gap-4 items-center relative z-100"
+         >
+           {/* About Us Dropdown */}
+           <div className="group relative">
+             <a
+               href="#"
+               className="no-underline text-black hover:text-gray-700 text-xs md:text-xs lg:text-sm xl:text-lg flex items-center"
+             >
+               About Us
+             </a>
+             <div className="absolute mt-2 w-36 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 left-0 transform">
+               <Link
+                 to="/about"
+                 className="block px-4 py-2 text-gray-800 hover:bg-green-200"
+               >
+                 About Us
+               </Link>
+               <Link
+                 to="/history"
+                 className="block px-4 py-2 text-gray-800 hover:bg-green-200"
+               >
+                 History
+               </Link>
+               <Link
+                 to="/newsletter"
+                 className="block px-4 py-2 text-gray-800 hover:bg-green-200"
+               >
+                 Newsletter
+               </Link>
+             </div>
+           </div>
+         
+           {/* Services Dropdown */}
+           <div className="group relative">
+             <a
+               href="#"
+               className="no-underline text-black hover:text-gray-700 text-xs md:text-xs lg:text-sm xl:text-lg flex items-center"
+             >
+               Services
+             </a>
+             <div className="absolute mt-2 w-36 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 left-0 transform">
+               <Link
+                 to="/funeral"
+                 className="block px-4 py-2 text-gray-800 hover:bg-green-200"
+               >
+                 Funeral
+               </Link>
+               <a
+                 href="https://www.bilalsundayschool.com/"
+                 className="block px-4 py-2 text-gray-800 hover:bg-green-200"
+               >
+                 Sunday School
+               </a>
+               <Link
+                 to="/social"
+                 className="block px-4 py-2 text-gray-800 hover:bg-green-200"
+               >
+                 Social Services
+               </Link>
+               <a
+                 href="https://pdxil.librarika.com/"
+                 className="block px-4 py-2 text-gray-800 hover:bg-green-200"
+               >
+                 Islamic Library
+               </a>
+               <Link
+                 to="/cemetry"
+                 className="block px-4 py-2 text-gray-800 hover:bg-green-200"
+               >
+                 Cemetry
+               </Link>
+               <Link
+                 to="/outreach"
+                 className="block px-4 py-2 text-gray-800 hover:bg-green-200"
+               >
+                 Outreach
+               </Link>
+             </div>
+           </div>
+         
+           {/* Calendar Link */}
+           <Link
+             to="/events"
+             className="no-underline text-black hover:text-gray-700 text-xs md:text-xs lg:text-sm xl:text-lg flex items-center"
+           >
+             Calendar
+           </Link>
+         
+           {/* Donations Dropdown */}
+           <div className="group relative">
+             <a
+               href="#"
+               className="no-underline text-black hover:text-gray-700 text-xs md:text-xs lg:text-sm xl:text-lg flex items-center"
+             >
+               Donations
+             </a>
+             <div className="absolute mt-2 w-36 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 left-0 transform">
+               <a
+                 href="https://us.mohid.co/or/portland/bma/masjid/online/donation"
+                 className="block px-4 py-2 text-gray-800 hover:bg-green-200"
+               >
+                 Donate via Card/Paypal
+               </a>
+               <a
+                 href="https://us.mohid.co/or/portland/bma/masjid/online/donation"
+                 className="block px-4 py-2 text-gray-800 hover:bg-green-200"
+               >
+                 Donate Stock
+               </a>
+               <Link
+                 to="/zakat"
+                 className="block px-4 py-2 text-gray-800 hover:bg-green-200"
+               >
+                 Zakat
+               </Link>
+             </div>
+           </div>
+         
+           {/* Announcement Link */}
+           <Link
+             to="/announcement"
+             className="no-underline text-black hover:text-gray-700 text-xs md:text-xs lg:text-sm xl:text-lg flex items-center"
+           >
+             Announcement
+           </Link>
+         </nav>
 
           {/* Location Button */}
           <div id="location" className="sm:hidden md:flex lg:flex items-center space-x-4 w-36 relative z-50">

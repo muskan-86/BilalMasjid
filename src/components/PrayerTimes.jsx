@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
 import { getStorage, ref, listAll, getDownloadURL } from 'firebase/storage';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import "./prayers.css";
 
 const PrayerTimes = () => {
@@ -68,60 +68,59 @@ const PrayerTimes = () => {
                     })}{' '}
                     - {todayData.Islamic || 'Islamic Date'}
                 </h1>
-                {/* <p>
-                    <KhateebSchedule/>
-                </p> */}
                 <p className="text-mediumseagreen-300 text-sm sm:text-sm">
                     <Link to="/khateeb-schedule">Jummah Time: {todayData.Jummah1 || '12:30'} & {todayData.Jummah2 || '1:45'}</Link>
                 </p>
             </div>
 
             {/* Right side: Prayer Times */}
-            <div className="flex flex-col sm:text-right mt-4 sm:mt-0">
-    <div className="overflow-x-auto">
-        <table className="w-full min-w-max">
-            {/* Table Head */}
-            <thead>
-                <tr className="bg-mediumseagreen-200">
-                    <th className="px-1 sm:px-3 md:px-6 py-1 sm:py-2 text-mediumseagreen-700 text-center text-[10px] sm:text-xs md:text-sm">
-                        Fajr
-                    </th>
-                    <th className="px-1 sm:px-3 md:px-5 py-1 sm:py-2 text-mediumseagreen-700 text-center text-[10px] sm:text-xs md:text-sm">
-                        Duhr
-                    </th>
-                    <th className="px-1 sm:px-3 md:px-6 py-1 sm:py-2 text-mediumseagreen-700 text-center text-[10px] sm:text-xs md:text-sm">
-                        Asr
-                    </th>
-                    <th className="px-1 sm:px-2 md:px-3 py-1 sm:py-2 text-mediumseagreen-700 text-center text-[10px] sm:text-xs md:text-sm">
-                        Maghrib
-                    </th>
-                    <th className="px-1 sm:px-3 md:px-5 py-1 sm:py-2 text-mediumseagreen-700 text-center text-[10px] sm:text-xs md:text-sm">
-                        Isha
-                    </th>
-                </tr>
-            </thead>
-            {/* Table Body */}
-            <tbody className="text-black text-center">
-                {/* Adhan Times */}
-                <tr className="bg-white">
-                    <td className="px-1 sm:px-3 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData.Fajr}</td>
-                    <td className="px-1 sm:px-3 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData.Duhr}</td>
-                    <td className="px-1 sm:px-3 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData.Asr}</td>
-                    <td className="px-1 sm:px-4 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData.Maghrib}</td>
-                    <td className="px-1 sm:px-3 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData.Isha}</td>
-                </tr>
-                {/* Iqama Times */}
-                <tr className="bg-white">
-                    <td className="px-1 sm:px-3 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData['Fajr Iqama']}</td>
-                    <td className="px-1 sm:px-3 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData['Duhr Iqama']}</td>
-                    <td className="px-1 sm:px-3 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData['Asr Iqama']}</td>
-                    <td className="px-1 sm:px-4 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData['Maghrib Iqama']}</td>
-                    <td className="px-1 sm:px-3 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData['Isha Iqama']}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
+            <Link to="/prayer-view">
+                <div className="flex flex-col sm:text-right mt-4 sm:mt-0">
+                    <div className="overflow-x-auto">
+                        <table className="w-full min-w-max">
+                            {/* Table Head */}
+                            <thead>
+                                <tr className="bg-mediumseagreen-200">
+                                    <th className="px-1 sm:px-3 md:px-6 py-1 sm:py-2 text-mediumseagreen-700 text-center text-[10px] sm:text-xs md:text-sm">
+                                        Fajr
+                                    </th>
+                                    <th className="px-1 sm:px-3 md:px-5 py-1 sm:py-2 text-mediumseagreen-700 text-center text-[10px] sm:text-xs md:text-sm">
+                                        Duhr
+                                    </th>
+                                    <th className="px-1 sm:px-3 md:px-6 py-1 sm:py-2 text-mediumseagreen-700 text-center text-[10px] sm:text-xs md:text-sm">
+                                        Asr
+                                    </th>
+                                    <th className="px-1 sm:px-2 md:px-3 py-1 sm:py-2 text-mediumseagreen-700 text-center text-[10px] sm:text-xs md:text-sm">
+                                        Maghrib
+                                    </th>
+                                    <th className="px-1 sm:px-3 md:px-5 py-1 sm:py-2 text-mediumseagreen-700 text-center text-[10px] sm:text-xs md:text-sm">
+                                        Isha
+                                    </th>
+                                </tr>
+                            </thead>
+                            {/* Table Body */}
+                            <tbody className="text-black text-center">
+                                {/* Adhan Times */}
+                                <tr className="bg-white">
+                                    <td className="px-1 sm:px-3 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData.Fajr}</td>
+                                    <td className="px-1 sm:px-3 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData.Duhr}</td>
+                                    <td className="px-1 sm:px-3 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData.Asr}</td>
+                                    <td className="px-1 sm:px-4 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData.Maghrib}</td>
+                                    <td className="px-1 sm:px-3 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData.Isha}</td>
+                                </tr>
+                                {/* Iqama Times */}
+                                <tr className="bg-white">
+                                    <td className="px-1 sm:px-3 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData['Fajr Iqama']}</td>
+                                    <td className="px-1 sm:px-3 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData['Duhr Iqama']}</td>
+                                    <td className="px-1 sm:px-3 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData['Asr Iqama']}</td>
+                                    <td className="px-1 sm:px-4 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData['Maghrib Iqama']}</td>
+                                    <td className="px-1 sm:px-3 py-1 sm:py-2 text-[10px] sm:text-xs">{todayData['Isha Iqama']}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </Link>
 
 
 

@@ -71,17 +71,16 @@ const HomePage = () => {
             <div className="bg-cover bg-center p-10 lg:flex lg:flex-row py-12 items-center hidden lg:block text-center">
               <div className="relative z-20 w-full flex flex-col gap-4 justify-center items-center mt-4 p-2">
                 <div className="my-4 px-4 w-full">
-                  <h2 className="text-white text-4xl font-bold" data-aos="fade-down" style={{ fontWeight: 'bold' }} >
+                  <h2 className="text-white text-4xl font-bold" data-aos="fade-down" style={{ fontWeight: 'bold' }}>
                     Welcome to Bilal Masjid
                   </h2>
                 </div>
                 <div className="flex w-full justify-center mt-3">
-                  <div className="w-2/3 text-center" data-aos="slide-right">
-                    <p className="text-lg xl:text-xl leading-relaxed text-white max-w-screen-lg mx-auto">
+                  <div className="w-full lg:w-2/3 xl:w-1/2 text-center " data-aos="slide-right">
+                    <p className="text-lg xl:text-xl leading-relaxed text-white mx-auto">
                       It is our honor and high privilege to welcome you to the Bilal Masjid Web site.
                       It is through the Gracious Mercy of Allah (SWT) that we are able to provide these services.
                     </p>
-
                   </div>
                 </div>
               </div>
@@ -89,22 +88,37 @@ const HomePage = () => {
 
             {/* Small Screens */}
             <div className="lg:hidden flex flex-col items-center bg-cover bg-center p-4 mb-2 font-serif text-center">
-              <div className="relative z-20 flex flex-col justify-center max-w-full">
+              <div className="relative z-20 flex flex-col justify-center items-center max-w-full">
                 <div className="my-4 w-full">
-                  <h2 className="text-white text-xl text-center" data-aos="fade-down"style={{ fontWeight: 'bold' }}>
+                  <h2
+                    className="text-white text-xl text-center"
+                    data-aos="fade-down"
+                    style={{ fontWeight: "bold" }}
+                  >
                     Welcome to Bilal Masjid
                   </h2>
                 </div>
-                <div className="text-white text-md text-justify" data-aos="slide-right">
-                  It is our honor and high privilege to welcome you to the Bilal Masjid Web site.
-                  It is through the Gracious Mercy of Allah (SWT) that we are able to provide these services.
+                <div
+                  className="w-[90%] sm:max-w-sm mx-auto text-justify sm:text-justify md:text-center text-white
+                             text-sm leading-relaxed md:w-full md:max-w-md md:text-md sm:px-4"
+                  data-aos="slide-right"
+                >
+                  It is our honor and high privilege to welcome you to the Bilal Masjid Web
+                  site. It is through the Gracious Mercy of Allah (SWT) that we are able to
+                  provide these services.
                 </div>
+
+
+
+
                 <div className="flex justify-center gap-4 w-full mt-4">
                   <IndexJoinUs />
                   <IndexDonateBtn />
                 </div>
               </div>
             </div>
+
+
 
             {/* Services Section */}
             <div className="flex items-center justify-center mx-4 lg:mx-28 mb-4 text-center">
@@ -199,7 +213,7 @@ const HomePage = () => {
               <div className="absolute inset-0 bg-white opacity-75"></div>
               <div className="flex justify-center items-center max-w-full my-12 z-20">
                 <button
-                  className="bg-white rounded-full border-4 border-green-600 px-8 py-2 text-green-600 font-medium text-2xl font-jenson"
+                  className="bg-white whitespace-nowrap rounded-full border-4 border-green-600 px-8 py-2 text-green-600 font-medium text-2xl font-jenson"
                   data-aos="fade-in"
                   style={{ fontWeight: 'bold' }}>
                   Our Services
