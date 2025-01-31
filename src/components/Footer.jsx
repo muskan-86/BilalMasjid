@@ -5,45 +5,43 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div className="overflow-x-hidden">
+        <div className="w-screen bg-slate-100">
             {/* Footer */}
-            <div className="flex flex-col w-full bg-slate-100 p-10">
-                <div className="flex flex-row flex-wrap sm:flex-nowrap justify-around items-center gap-10 w-full bg-slate-100 max-w-[1300px] mx-auto">
-                    <div className="flex flex-col items-start">
-                        <img className="h-24 my-4" loading="lazy" alt="Logo" src="/bilallogohighresolution-1@2x.png" />
-                        <div className="my-4 flex flex-col gap-2">
-                            <p>Address: 4115 SW 160th Beaverton, OR 97008</p>
-                            <p>Email: bilalmasjid@bilalmasjid.com</p>
-                        </div>
+            <div className="max-w-[1300px] mx-auto sm:p-2 p-10 flex flex-col sm:flex-row flex-wrap sm:flex-nowrap justify-around items-center gap-10">
+                <div className="flex flex-col items-start">
+                    <img className="h-24 my-4" loading="lazy" alt="Logo" src="/bilallogohighresolution-1@2x.png" />
+                    <div className="my-4 flex flex-col gap-2">
+                        <p>Address: 4115 SW 160th Beaverton, OR 97008</p>
+                        <p>Email: bilalmasjid@bilalmasjid.com</p>
                     </div>
-                    <div className="flex flex-row gap-12 items-start">
-                        <div className="flex flex-col gap-4 font-medium">
-                            <p className="font-semibold">Quick Links</p>
-                            <p> <Link to="/about" className="no-underline text-black">About Us</Link></p>
-                            <p><Link to="/events" className="no-underline text-black">Calendar</Link></p>
-                            <p><Link to="/announcement" className="no-underline text-black">Announcement</Link></p>
-                            <Link to="/login" className="no-underline text-black hover:text-gray-700">Admin Panel</Link>
+                </div>
+                <div className="flex flex-row gap-2 sm:gap-12 md:gap-12 lg:gap-12 xl:gap-12 items-start">
+                    <div className="flex flex-col gap-4 font-medium">
+                        <p className="font-semibold">Quick Links</p>
+                        <p><Link to="/about" className="no-underline text-black">About Us</Link></p>
+                        <p><Link to="/events" className="no-underline text-black">Calendar</Link></p>
+                        <p><Link to="/announcement" className="no-underline text-black">Announcement</Link></p>
+                        <Link to="/login" className="no-underline text-black hover:text-gray-700">Admin Panel</Link>
+                    </div>
+                    <div className="flex flex-col justify-center mx-4 items-center">
+                        <div>
+                            <FollowButton />
                         </div>
-                        <div className="flex flex-col justify-center mx-4 items-center">
-                            <div>
-                                <FollowButton />
+                        <div className="flex gap-3">
+                            <div className="bg-mediumseagreen-300 rounded-full w-8 h-8">
+                                <a href="https://web.facebook.com/bilalmasjidbeaverton?_rdc=1&_rdr" target="_blank" rel="noopener noreferrer">
+                                    <img src="/Facebook-icon.png" alt="facebook icon" />
+                                </a>
                             </div>
-                            <div className="flex gap-3">
-                                <div className="bg-mediumseagreen-300 rounded-full w-8 h-8">
-                                    <a href="https://web.facebook.com/bilalmasjidbeaverton?_rdc=1&_rdr" target="_blank" rel="noopener noreferrer">
-                                        <img src="/Facebook-icon.png" alt="facebook icon" />
-                                    </a>
-                                </div>
-                                <div className="bg-mediumseagreen-300 rounded-full w-8 h-8">
-                                    <a href="https://chat.whatsapp.com/B8c6ngDZTkBI8RBs6JHEgm" target="_blank" rel="noopener noreferrer">
-                                        <img src="/whatsapp-icon.svg" alt="whatsapp icon" />
-                                    </a>
-                                </div>
-                                <div className="bg-mediumseagreen-300 rounded-full w-8 h-8">
-                                    <a href="https://www.youtube.com/channel/UCYcsOfNe70UH_b65RdZmpRA" target="_blank" rel="noopener noreferrer">
-                                        <img src="/youtube-icon.png" className="p-1" alt="youtube icon" />
-                                    </a>
-                                </div>
+                            <div className="bg-mediumseagreen-300 rounded-full w-8 h-8">
+                                <a href="https://chat.whatsapp.com/B8c6ngDZTkBI8RBs6JHEgm" target="_blank" rel="noopener noreferrer">
+                                    <img src="/whatsapp-icon.svg" alt="whatsapp icon" />
+                                </a>
+                            </div>
+                            <div className="bg-mediumseagreen-300 rounded-full w-8 h-8">
+                                <a href="https://www.youtube.com/channel/UCYcsOfNe70UH_b65RdZmpRA" target="_blank" rel="noopener noreferrer">
+                                    <img src="/youtube-icon.png" className="p-1" alt="youtube icon" />
+                                </a>
                             </div>
                         </div>
                     </div>

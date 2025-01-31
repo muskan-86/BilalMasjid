@@ -3,6 +3,7 @@ import { useState } from 'react';
 import React from 'react';
 import { useAnnouncements } from '../context/AnnouncementContext';
 import Slider from "react-slick";
+import "./announcement.css";
 
 const SampleNextArrow = (props) => {
     const { className, style, onClick } = props;
@@ -56,7 +57,7 @@ const AnnouncementPopup = ({ isOpen, onClose }) => {
 
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-    <div className="bg-white p-6 rounded-lg shadow-md w-11/12 max-w-sm mx-4 relative">
+    <div className="announcement-popup-container bg-white p-6 rounded-lg shadow-md w-11/12 max-w-sm mx-4 relative">
         {/* Close Button */}
         <button
             onClick={onClose}
@@ -75,7 +76,7 @@ const AnnouncementPopup = ({ isOpen, onClose }) => {
                             <img
                                 src={announcement.imageUrl}
                                 alt={announcement.title}
-                                className="h-72 rounded-2xl max-w-md object-cover mb-4"
+                                className="h-72 rounded-2xl max-w-md sm:max-w-full object-cover mb-4"
                             />
                         </div>
                     </div>

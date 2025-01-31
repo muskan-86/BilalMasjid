@@ -77,11 +77,11 @@ const PrayerTimes = () => {
             {/* Right side: Prayer Times */}
             <Link to="/prayer-view">
                 <div className="flex flex-col sm:text-right mt-4 sm:mt-0">
-                    <div className="overflow-x-auto">
-                        <table className="w-full min-w-max">
+                    <div className="overflow-x-hidden"  >
+                        <table className="w-full min-w-auto ">
                             {/* Table Head */}
                             <thead>
-                                <tr className=" font-serif">
+                                <tr className=" font-serif text-xs">
                                     <th className="px-1 sm:px-2 md:px-2 py-1 sm:py-2 text-mediumseagreen-300 text-center sm:text-xs md:text-xs">
                                         
                                     </th>

@@ -1,0 +1,12 @@
+
+/* Adjust for screens smaller than 370px */
+@media (max-width: 360px) {
+    .announcement-popup-container {
+        max-width: 300px; /* Set max-width to 320px */
+        padding: 8px; /* Reduce padding */
+    }
+
+    .announcement-popup-container img {
+        max-width: 100%; /* Ensure image is responsive */
+    }
+}

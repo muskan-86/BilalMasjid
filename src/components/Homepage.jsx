@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { db } from '../firebase-config'; 
+import { getFirestore, doc, getDoc } from 'firebase/firestore'; 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Event from './Event.jsx';
@@ -13,28 +15,73 @@ import "./home.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import PrayerTimes from './PrayerTimes.jsx';
-import Services from './Services.jsx'
-
+import Services from './Services.jsx';
+import AnnouncementPopup from './AnnouncementPopup.jsx';
 
 const HomePage = () => {
-  const [loading, setLoading] = useState(true); // State to track loader status
+  const [loading, setLoading] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupEnabled, setPopupEnabled] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false); // Set loading to false once done
+    const loadingTimer = setTimeout(() => {
+      setLoading(false);
     }, 500);
 
     AOS.init({
       duration: 1000,
-      delay: 200,
+      delay: 500,
     });
-    // Cleanup timer
-    return () => clearTimeout(timer);
+
+    return () => clearTimeout(loadingTimer);
+  }, []);
+
+  useEffect(() => {
+    const fetchPopupSetting = async () => {
+      try {
+        const db = getFirestore();
+        const docRef = doc(db, "settings", "announcementStatus");
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          console.log("Fetched Data from Firestore:", data);
+
+          if (typeof data.enabled === "boolean") {
+            setPopupEnabled(data.enabled);
+
+            if (data.enabled) {
+              setShowPopup(true);
+              console.log("Popup should appear immediately!");
+
+              setTimeout(() => {
+                setShowPopup(false);
+                console.log("Popup hidden after 10 seconds");
+              }, 10000);
+            }
+          } else {
+            console.error("Invalid Firestore field type:", data);
+          }
+        } else {
+          console.error("Document does not exist in Firestore");
+        }
+      } catch (error) {
+        console.error("Error fetching Firestore document:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPopupSetting();
   }, []);
 
   return (
     <div className="overflow-hidden bg-white">
       <Loader />
+
+      {!loading && showPopup && (
+        <AnnouncementPopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
+      )}
       <div className="relative gap-4">
         {/* Other components */}
         {!loading && <AnnouncementButton />}
@@ -248,7 +295,7 @@ const HomePage = () => {
             </div>
           </div>
 
-          <div className='w-full mt-0'>
+          <div className=' mt-0'>
             <Footer />
           </div>
         </div>

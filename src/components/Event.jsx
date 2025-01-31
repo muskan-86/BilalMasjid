@@ -155,7 +155,7 @@ const Event = () => {
       style={{
         width: "80%",
         maxWidth: 
-          isMobile ? "450px" : 
+          isMobile ? "350px" : 
           window.innerWidth <= 768 ? "880px" : 
           window.innerWidth <= 1024 ? "1000px" : "1500px", // Added breakpoints for 768 and 1024px
         margin: "0 auto",
