@@ -11,15 +11,31 @@ const EventDetails = () => {
 
   // Function to format the date
   const formatDate = (date) => {
-    if (typeof date === 'string') { // Check if the date is a string
-      const dateObj = new Date(date); // Convert to a Date object
-      return dateObj.toLocaleDateString(); // Format as needed (MM/DD/YYYY, etc.)
-    } else if (date && date.seconds) { // Check if date is a Firestore Timestamp
-      const dateObj = new Date(date.seconds * 1000); // Convert to JavaScript Date
-      return dateObj.toLocaleDateString(); // Format as needed
+    if (typeof date === 'string') {
+      // Split date string (YYYY-MM-DD)
+      const [year, month, day] = date.split('-').map(Number);
+  
+      // Use UTC without timezone shifts
+      return `${String(day).padStart(2, '0')}/${String(month).padStart(2, '0')}/${year}`;
+    } else if (date && date.seconds) {
+      // Convert Firestore timestamp to UTC date
+      const dateObj = new Date(date.seconds * 1000);
+  
+      // Extract UTC day, month, year
+      const day = dateObj.getUTCDate();
+      const month = dateObj.getUTCMonth() + 1; // Month is 0-based
+      const year = dateObj.getUTCFullYear();
+  
+      // Format as DD/MM/YYYY
+      return `${String(day).padStart(2, '0')}/${String(month).padStart(2, '0')}/${year}`;
     }
-    return 'Invalid Date'; // Return a default value if not a valid date
+  
+    return 'Invalid Date';
   };
+  
+  
+  
+  
 
   if (!eventDetails) {
     return <div>Loading...</div>; // Show loading state
